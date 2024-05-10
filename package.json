@@ -1,0 +1,36 @@
+{
+  "name": "rsa-encryption-decryption",
+  "version": "1.0.1",
+  "description": "NodeJS project for RSA Algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run",
+    "generate-rsa-keys": "node index.js main",
+    "encrypt": "node index.js encrypt",
+    "decrypt": "node index.js decrypt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aishwaryawambule/node-rsa-encryption-decryption.git"
+  },
+  "keywords": [
+    "rsa",
+    "encryption",
+    "decryption",
+    "nodejs"
+  ],
+  "author": "Aishwarya Rai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aishwaryawambule/node-rsa-encryption-decryption/issues"
+  },
+  "homepage": "https://github.com/aishwaryawambule/node-rsa-encryption-decryption#readme",
+  "dependencies": {
+    "big-integer": "^1.6.52",
+    "node-forge": "^1.3.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
