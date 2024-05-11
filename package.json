@@ -1,6 +1,6 @@
 {
   "name": "node-rsa-encryption-decryption",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS project for RSA Algorithm",
   "main": "index.js",
   "scripts": {

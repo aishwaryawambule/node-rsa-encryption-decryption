@@ -2,6 +2,7 @@ const forge = require('node-forge');
 const fs = require('fs');
 const bigInt = require('big-integer');
 const { modulusInverse } = require('../alogrithm/modulusCalculation');
+const path = require('path');
 
 module.exports = {
 
@@ -32,12 +33,19 @@ module.exports = {
             const privateKeyPem = forge.pki.privateKeyToPem(rsaKeys.privateKey);
             const publicKeyPem = forge.pki.publicKeyToPem(rsaKeys.publicKey);
 
+            const folderPath = '.rsa/';
+
+            // create folder if not exists
+            if (!fs.existsSync(folderPath)) {
+                fs.mkdirSync(folderPath, { recursive: true });
+            }
+
             // create private key PEM file and store it in directory of your choice
-            fs.writeFileSync('rsa/keys/private_key.pem', privateKeyPem, 'utf8');
+            fs.writeFileSync(path.join(folderPath, 'private_key.pem'), privateKeyPem, 'utf8');
             console.log('Private key PEM file created successfully.');
 
             // create public key PEM file and store it in directory of your choice
-            fs.writeFileSync('rsa/keys/public_key.pem', publicKeyPem, 'utf8');
+            fs.writeFileSync(path.join(folderPath, 'public_key.pem'), publicKeyPem, 'utf8');
             console.log('Public key PEM file created successfully.');
 
         } catch (error) {
